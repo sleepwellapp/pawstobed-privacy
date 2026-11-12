@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Paws to Bed : politique de confidentialité, 7 langues (en, fr, es, de, it, pt-BR, ja). Date d'effet : 2026-11-12.
+  Paws to Bed : politique de confidentialité, 7 langues (en, fr, es, de, it, pt-BR, ja). Date d'effet : 2026-11-13 (Google Play Jeux, section 7).
   Reprise de celle d'Acorn Crew (sa page, sa forme, son script de langue) ; vraie pour le build du test fermé, celui qui
   porte Firebase, la pub et l'achat No Ads (docs/PLAY-CONSOLE.md). Une page statique : ni police, ni script, ni image
   venus d'ailleurs ; aucun traceur. Le petit script en bas choisit la langue (?lang=xx, sinon #xx, sinon la langue du
@@ -15,6 +15,8 @@
   - Où changer d'avis : Réglages (bouton en bas à gauche, dès le niveau 4) → « Partager les stats » (docs/ANALYTICS.md §2, §5).
     Les libellés des autres langues suivent la carte des 7 langues : à relire quand elle est dans main.
   - Pubs : BRIEF (zéro pub avant le niveau 35, jamais après un échec, au plus une toutes les 3 minutes), No Ads 1,99 €.
+  - Google Play Jeux (section 7, mission fr23) : docs/PLAY-JEUX.md ; données du SDK lues le 2026-11-12 sur
+    https://developer.android.com/games/pgs/data-collection (identité de joueur, analyse, diagnostic, HTTPS).
   - Contact : celui d'Acorn Crew et de Dev Idle (sylvain69740@gmail.com).
 
   PAGES OFFICIELLES (lues le 2026-11-12, ou par Acorn Crew le 2026-11-06) :
@@ -81,12 +83,13 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== ENGLISH -->
 <section id="en" lang="en">
 <h1>Paws to Bed — Privacy Policy</h1>
-<p class="date">Effective date: November 12, 2026</p>
+<p class="date">Effective date: November 13, 2026</p>
 <p><strong>Paws to Bed</strong> (Android package <code>com.goodapps.pawstobed</code>) is a puzzle game published by GoodApps Studio (“we”). This page explains, in plain words, what the game keeps on your device, what it can send, and the choices you have.</p>
 <div class="short">
 <h2>In short</h2>
 <ul>
-<li><strong>No account</strong>, no sign-in. Your progress stays <strong>on your device</strong>.</li>
+<li><strong>No account</strong> to create. Your progress stays <strong>on your device</strong>.</li>
+<li>If you have a <strong>Google Play Games</strong> profile, the achievements you earn in the game also appear there (section 7).</li>
 <li>Gameplay statistics and crash reports go to Google Firebase <strong>only if you choose “Yes, happy to”</strong>.</li>
 <li>From level 35, the game may show an ad between two levels, never after a failed level. Ads are served by Google AdMob, which collects some data on its own (section 5). In Europe, the UK and Switzerland, Google asks for your consent first.</li>
 <li>The optional “No Ads” purchase removes those ads for good. Payment is handled by Google Play; we never see your payment details.</li>
@@ -127,27 +130,31 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <h2>6. The “No Ads” purchase</h2>
 <p>The optional “No Ads” purchase removes the ads between levels for good. It is processed by Google Play under Google’s terms: we never see or keep your payment details. Your phone keeps the record of the purchase, and Google Play restores it if you reinstall the game with the same Google account.</p>
 
-<h2>7. How long data is kept</h2>
+<h2>7. Google Play Games achievements</h2>
+<p>If your phone has a <strong>Google Play Games</strong> profile, Google signs you in automatically when the game starts (a small “Signed in as…” banner, the first time). The game has no sign-in screen of its own and asks you for nothing. Each achievement you collect on the game’s achievements page is then also unlocked in your Play Games profile: the game only tells Google which achievements you have earned. It never receives your email address or your contacts.</p>
+<p>Your Play Games profile (gamer name, avatar, achievements, who can see them) belongs to your Google account and is handled by Google under its own <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Privacy Policy</a>; you can change its visibility or delete it in the Play Games app or in your Google account. Google also collects diagnostic and analytics data about its SDK. Without a Play Games profile, nothing is sent and the game works just the same.</p>
+
+<h2>8. How long data is kept</h2>
 <ul>
 <li><strong>Analytics:</strong> detailed event data is kept for 2 months, then deleted; aggregated reports contain no identifier.</li>
 <li><strong>Crashlytics:</strong> crash reports are kept for 90 days.</li>
 <li><strong>Ads:</strong> Google keeps ad data according to its own policy.</li>
 </ul>
 
-<h2>8. Who processes the data, and where</h2>
+<h2>9. Who processes the data, and where</h2>
 <p>For statistics, Google acts on our behalf as a service provider (“data processor”), under the Firebase terms. For ads, Google also uses the data for its own purposes, as described in section 5. Data may be processed in any country where Google has facilities, with the safeguards set out in Google’s terms. We do not share data with anyone else, and we never sell it.</p>
 <p>More: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a> · <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a></p>
 
-<h2>9. Permissions</h2>
-<p>The game uses the internet connection (statistics, ads, purchase) and the advertising ID permission added by the ads SDK. It never accesses your contacts, files, photos, location, microphone or camera.</p>
+<h2>10. Permissions</h2>
+<p>The game uses the internet connection (statistics, ads, purchase, Google Play Games) and the advertising ID permission added by the ads SDK. It never accesses your contacts, files, photos, location, microphone or camera.</p>
 
-<h2>10. Children</h2>
+<h2>11. Children</h2>
 <p>Paws to Bed is not designed for children under 13, and we do not knowingly collect personal data from children. The game never asks for an age or a name. If you believe a child’s data has been sent, write to us.</p>
 
-<h2>11. Your rights</h2>
+<h2>12. Your rights</h2>
 <p>Depending on where you live (for example under the GDPR), you can ask to access, correct or delete your data, or object to its use. You can withdraw your consent at any time in Settings, without losing anything in the game. Because our statistics contain no name or contact details, we usually cannot tell which data is yours; write to us and we will do what we can. You can also complain to your data protection authority (in France, the CNIL).</p>
 
-<h2>12. Changes</h2>
+<h2>13. Changes</h2>
 <p>If this policy changes, we will update this page and the date at the top.</p>
 
 <h2>Contact</h2>
@@ -157,12 +164,13 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== FRANÇAIS -->
 <section id="fr" lang="fr">
 <h1>Paws to Bed — Politique de confidentialité</h1>
-<p class="date">Date d’effet : 12 novembre 2026</p>
+<p class="date">Date d’effet : 13 novembre 2026</p>
 <p><strong>Paws to Bed</strong> (package Android <code>com.goodapps.pawstobed</code>) est un jeu de réflexion publié par GoodApps Studio (« nous »). Cette page explique simplement ce que le jeu garde sur votre appareil, ce qu’il peut envoyer, et les choix que vous avez.</p>
 <div class="short">
 <h2>L’essentiel</h2>
 <ul>
-<li><strong>Aucun compte</strong>, aucune connexion. Votre progression reste <strong>sur votre appareil</strong>.</li>
+<li><strong>Aucun compte</strong> à créer. Votre progression reste <strong>sur votre appareil</strong>.</li>
+<li>Si vous avez un profil <strong>Google Play Jeux</strong>, les succès gagnés dans le jeu s’y affichent aussi (section 7).</li>
 <li>Les statistiques de jeu et les rapports de plantage partent vers Google Firebase <strong>seulement si vous choisissez « Oui, volontiers »</strong>.</li>
 <li>À partir du niveau 35, le jeu peut montrer une pub entre deux niveaux, jamais après un niveau raté. Les pubs viennent de Google AdMob, qui collecte lui-même certaines données (section 5). En Europe, au Royaume-Uni et en Suisse, Google demande d’abord votre consentement.</li>
 <li>L’achat facultatif « Sans pub » retire ces pubs pour de bon. Le paiement passe par Google Play ; nous ne voyons jamais vos données de paiement.</li>
@@ -203,27 +211,31 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <h2>6. L’achat « Sans pub »</h2>
 <p>L’achat facultatif « Sans pub » retire pour de bon les pubs entre deux niveaux. Il est traité par Google Play selon les conditions de Google : nous ne voyons ni ne gardons jamais vos données de paiement. Votre téléphone garde la trace de l’achat, et Google Play le restaure si vous réinstallez le jeu avec le même compte Google.</p>
 
-<h2>7. Combien de temps les données sont gardées</h2>
+<h2>7. Les succès dans Google Play Jeux</h2>
+<p>Si votre téléphone a un profil <strong>Google Play Jeux</strong>, Google vous y connecte tout seul au lancement du jeu (un petit bandeau « Connecté en tant que… », la première fois). Le jeu n’a pas d’écran de connexion à lui et ne vous demande rien. Chaque succès que vous prenez sur la page des succès du jeu se coche alors aussi dans votre profil Play Jeux : le jeu dit seulement à Google quels succès vous avez gagnés. Il ne reçoit jamais votre adresse e-mail ni vos contacts.</p>
+<p>Votre profil Play Jeux (pseudo, avatar, succès, qui peut les voir) appartient à votre compte Google, et Google le traite selon ses propres <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Règles de confidentialité</a> ; vous pouvez changer sa visibilité ou le supprimer dans l’appli Play Jeux ou dans votre compte Google. Google recueille aussi des données de diagnostic et d’analyse sur son SDK. Sans profil Play Jeux, rien n’est envoyé et le jeu marche de la même façon.</p>
+
+<h2>8. Combien de temps les données sont gardées</h2>
 <ul>
 <li><strong>Analytics :</strong> les événements détaillés sont gardés 2 mois, puis supprimés ; les rapports agrégés ne contiennent aucun identifiant.</li>
 <li><strong>Crashlytics :</strong> les rapports de plantage sont gardés 90 jours.</li>
 <li><strong>Pubs :</strong> Google garde les données publicitaires selon ses propres règles.</li>
 </ul>
 
-<h2>8. Qui traite les données, et où</h2>
+<h2>9. Qui traite les données, et où</h2>
 <p>Pour les statistiques, Google agit pour notre compte, comme sous-traitant, selon les conditions de Firebase. Pour les pubs, Google utilise aussi les données pour ses propres finalités (section 5). Les données peuvent être traitées dans tout pays où Google a des installations, avec les garanties prévues par ses conditions. Nous ne partageons les données avec personne d’autre, et ne les vendons jamais.</p>
 <p>En savoir plus : <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Confidentialité et sécurité dans Firebase</a> · <a href="https://policies.google.com/privacy?hl=fr" rel="noopener noreferrer">Règles de confidentialité de Google</a></p>
 
-<h2>9. Autorisations</h2>
-<p>Le jeu utilise la connexion internet (statistiques, pubs, achat) et l’autorisation d’identifiant publicitaire ajoutée par le SDK des pubs. Il n’accède jamais à vos contacts, fichiers, photos, position, micro ni appareil photo.</p>
+<h2>10. Autorisations</h2>
+<p>Le jeu utilise la connexion internet (statistiques, pubs, achat, Google Play Jeux) et l’autorisation d’identifiant publicitaire ajoutée par le SDK des pubs. Il n’accède jamais à vos contacts, fichiers, photos, position, micro ni appareil photo.</p>
 
-<h2>10. Enfants</h2>
+<h2>11. Enfants</h2>
 <p>Paws to Bed n’est pas conçu pour les enfants de moins de 13 ans, et nous ne collectons pas sciemment de données personnelles d’enfants. Le jeu ne demande jamais d’âge ni de nom. Si vous pensez que les données d’un enfant ont été envoyées, écrivez-nous.</p>
 
-<h2>11. Vos droits</h2>
+<h2>12. Vos droits</h2>
 <p>Selon l’endroit où vous vivez (par exemple avec le RGPD), vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur utilisation. Vous pouvez retirer votre consentement à tout moment dans les Réglages, sans rien perdre dans le jeu. Nos statistiques ne contenant ni nom ni coordonnées, nous ne pouvons en général pas savoir quelles données sont les vôtres ; écrivez-nous et nous ferons notre possible. Vous pouvez aussi saisir l’autorité de protection des données (en France, la CNIL).</p>
 
-<h2>12. Modifications</h2>
+<h2>13. Modifications</h2>
 <p>Si cette politique change, nous mettrons à jour cette page et la date en haut.</p>
 
 <h2>Contact</h2>
@@ -233,12 +245,13 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== ESPAÑOL -->
 <section id="es" lang="es">
 <h1>Paws to Bed — Política de privacidad</h1>
-<p class="date">Fecha de entrada en vigor: 12 de noviembre de 2026</p>
+<p class="date">Fecha de entrada en vigor: 13 de noviembre de 2026</p>
 <p><strong>Paws to Bed</strong> (paquete de Android <code>com.goodapps.pawstobed</code>) es un juego de puzles publicado por GoodApps Studio («nosotros»). Esta página explica, con palabras sencillas, qué guarda el juego en tu dispositivo, qué puede enviar y qué opciones tienes.</p>
 <div class="short">
 <h2>En resumen</h2>
 <ul>
-<li><strong>Sin cuenta</strong> ni inicio de sesión. Tu progreso se queda <strong>en tu dispositivo</strong>.</li>
+<li><strong>Sin cuenta</strong> que crear. Tu progreso se queda <strong>en tu dispositivo</strong>.</li>
+<li>Si tienes un perfil de <strong>Google Play Juegos</strong>, los logros que ganas en el juego también aparecen allí (sección 7).</li>
 <li>Las estadísticas de juego y los informes de errores se envían a Google Firebase <strong>solo si eliges «Sí, claro»</strong>.</li>
 <li>A partir del nivel 35, el juego puede mostrar un anuncio entre dos niveles, nunca después de un nivel fallido. Los anuncios los sirve Google AdMob, que recoge algunos datos por su cuenta (sección 5). En Europa, el Reino Unido y Suiza, Google te pide primero tu consentimiento.</li>
 <li>La compra opcional «Sin anuncios» los quita para siempre. El pago lo gestiona Google Play; nunca vemos tus datos de pago.</li>
@@ -279,27 +292,31 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <h2>6. La compra «Sin anuncios»</h2>
 <p>La compra opcional «Sin anuncios» quita para siempre los anuncios entre niveles. La procesa Google Play según las condiciones de Google: nunca vemos ni guardamos tus datos de pago. Tu teléfono guarda la constancia de la compra, y Google Play la restaura si reinstalas el juego con la misma cuenta de Google.</p>
 
-<h2>7. Cuánto tiempo se guardan los datos</h2>
+<h2>7. Los logros en Google Play Juegos</h2>
+<p>Si tu teléfono tiene un perfil de <strong>Google Play Juegos</strong>, Google inicia tu sesión automáticamente al abrir el juego (un pequeño aviso «Has iniciado sesión como…», la primera vez). El juego no tiene pantalla de inicio de sesión propia y no te pide nada. Cada logro que recoges en la página de logros del juego se desbloquea también en tu perfil de Play Juegos: el juego solo le dice a Google qué logros has ganado. Nunca recibe tu correo electrónico ni tus contactos.</p>
+<p>Tu perfil de Play Juegos (nombre de jugador, avatar, logros, quién puede verlos) pertenece a tu cuenta de Google, y Google lo trata según su propia <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Política de Privacidad</a>; puedes cambiar su visibilidad o eliminarlo en la app Play Juegos o en tu cuenta de Google. Google también recoge datos de diagnóstico y analíticos sobre su SDK. Sin perfil de Play Juegos, no se envía nada y el juego funciona igual.</p>
+
+<h2>8. Cuánto tiempo se guardan los datos</h2>
 <ul>
 <li><strong>Analytics:</strong> los eventos detallados se guardan 2 meses y luego se eliminan; los informes agregados no contienen ningún identificador.</li>
 <li><strong>Crashlytics:</strong> los informes de errores se guardan 90 días.</li>
 <li><strong>Anuncios:</strong> Google guarda los datos publicitarios según su propia política.</li>
 </ul>
 
-<h2>8. Quién trata los datos, y dónde</h2>
+<h2>9. Quién trata los datos, y dónde</h2>
 <p>Para las estadísticas, Google actúa en nuestro nombre como encargado del tratamiento, según las condiciones de Firebase. Para los anuncios, Google también usa los datos para sus propios fines (sección 5). Los datos pueden tratarse en cualquier país donde Google tenga instalaciones, con las garantías de sus condiciones. No compartimos los datos con nadie más y nunca los vendemos.</p>
 <p>Más información: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacidad y seguridad en Firebase</a> · <a href="https://policies.google.com/privacy?hl=es" rel="noopener noreferrer">Política de privacidad de Google</a></p>
 
-<h2>9. Permisos</h2>
-<p>El juego usa la conexión a internet (estadísticas, anuncios, compra) y el permiso de ID de publicidad que añade el SDK de anuncios. Nunca accede a tus contactos, archivos, fotos, ubicación, micrófono ni cámara.</p>
+<h2>10. Permisos</h2>
+<p>El juego usa la conexión a internet (estadísticas, anuncios, compra, Google Play Juegos) y el permiso de ID de publicidad que añade el SDK de anuncios. Nunca accede a tus contactos, archivos, fotos, ubicación, micrófono ni cámara.</p>
 
-<h2>10. Menores</h2>
+<h2>11. Menores</h2>
 <p>Paws to Bed no está pensado para menores de 13 años, y no recogemos a sabiendas datos personales de menores. El juego nunca pide una edad ni un nombre. Si crees que se han enviado datos de un menor, escríbenos.</p>
 
-<h2>11. Tus derechos</h2>
+<h2>12. Tus derechos</h2>
 <p>Según dónde vivas (por ejemplo, con el RGPD), puedes pedir acceder a tus datos, corregirlos o borrarlos, u oponerte a su uso. Puedes retirar tu consentimiento en cualquier momento en los Ajustes, sin perder nada en el juego. Como nuestras estadísticas no contienen nombre ni datos de contacto, normalmente no podemos saber qué datos son tuyos; escríbenos y haremos lo posible. También puedes reclamar ante tu autoridad de protección de datos (en España, la AEPD).</p>
 
-<h2>12. Cambios</h2>
+<h2>13. Cambios</h2>
 <p>Si esta política cambia, actualizaremos esta página y la fecha de arriba.</p>
 
 <h2>Contacto</h2>
@@ -309,12 +326,13 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== DEUTSCH -->
 <section id="de" lang="de">
 <h1>Paws to Bed — Datenschutzerklärung</h1>
-<p class="date">Gültig ab: 12. November 2026</p>
+<p class="date">Gültig ab: 13. November 2026</p>
 <p><strong>Paws to Bed</strong> (Android-Paket <code>com.goodapps.pawstobed</code>) ist ein Puzzlespiel von GoodApps Studio („wir“). Diese Seite erklärt in einfachen Worten, was das Spiel auf deinem Gerät speichert, was es senden kann und welche Wahl du hast.</p>
 <div class="short">
 <h2>Kurz gesagt</h2>
 <ul>
-<li><strong>Kein Konto</strong>, keine Anmeldung. Dein Fortschritt bleibt <strong>auf deinem Gerät</strong>.</li>
+<li><strong>Kein Konto</strong> nötig. Dein Fortschritt bleibt <strong>auf deinem Gerät</strong>.</li>
+<li>Wenn du ein <strong>Google Play Spiele</strong>-Profil hast, erscheinen die Erfolge, die du im Spiel sammelst, auch dort (Abschnitt 7).</li>
 <li>Spielstatistiken und Absturzberichte gehen an Google Firebase, <strong>nur wenn du „Ja, gern“ wählst</strong>.</li>
 <li>Ab Level 35 kann das Spiel zwischen zwei Levels eine Werbung zeigen, nie nach einem verlorenen Level. Die Werbung kommt von Google AdMob, das selbst einige Daten erhebt (Abschnitt 5). In Europa, im Vereinigten Königreich und in der Schweiz fragt Google zuerst nach deiner Einwilligung.</li>
 <li>Der freiwillige Kauf „Ohne Werbung“ entfernt diese Werbung für immer. Die Zahlung läuft über Google Play; deine Zahlungsdaten sehen wir nie.</li>
@@ -355,27 +373,31 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <h2>6. Der Kauf „Ohne Werbung“</h2>
 <p>Der freiwillige Kauf „Ohne Werbung“ entfernt die Werbung zwischen den Levels für immer. Er wird von Google Play nach den Bedingungen von Google abgewickelt: Deine Zahlungsdaten sehen und speichern wir nie. Dein Telefon behält den Nachweis des Kaufs, und Google Play stellt ihn wieder her, wenn du das Spiel mit demselben Google-Konto neu installierst.</p>
 
-<h2>7. Wie lange Daten aufbewahrt werden</h2>
+<h2>7. Erfolge in Google Play Spiele</h2>
+<p>Hat dein Handy ein <strong>Google Play Spiele</strong>-Profil, meldet Google dich beim Start des Spiels automatisch an (beim ersten Mal ein kleines Banner „Angemeldet als …“). Das Spiel hat keinen eigenen Anmeldebildschirm und fragt dich nichts. Jeder Erfolg, den du auf der Erfolgsseite des Spiels abholst, wird dann auch in deinem Play Spiele-Profil freigeschaltet: Das Spiel teilt Google nur mit, welche Erfolge du erreicht hast. Es erhält nie deine E-Mail-Adresse oder deine Kontakte.</p>
+<p>Dein Play Spiele-Profil (Spielername, Avatar, Erfolge, wer sie sehen kann) gehört zu deinem Google-Konto und wird von Google nach seiner eigenen <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Datenschutzerklärung</a> verarbeitet; du kannst seine Sichtbarkeit ändern oder es in der Play Spiele-App oder in deinem Google-Konto löschen. Google erhebt außerdem Diagnose- und Analysedaten zu seinem SDK. Ohne Play Spiele-Profil wird nichts gesendet, und das Spiel funktioniert genauso.</p>
+
+<h2>8. Wie lange Daten aufbewahrt werden</h2>
 <ul>
 <li><strong>Analytics:</strong> detaillierte Ereignisdaten werden 2 Monate aufbewahrt und dann gelöscht; zusammengefasste Berichte enthalten keine Kennung.</li>
 <li><strong>Crashlytics:</strong> Absturzberichte werden 90 Tage aufbewahrt.</li>
 <li><strong>Werbung:</strong> Google bewahrt Werbedaten nach seinen eigenen Regeln auf.</li>
 </ul>
 
-<h2>8. Wer die Daten verarbeitet, und wo</h2>
+<h2>9. Wer die Daten verarbeitet, und wo</h2>
 <p>Für die Statistiken handelt Google in unserem Auftrag als Auftragsverarbeiter, nach den Firebase-Bedingungen. Für die Werbung nutzt Google die Daten auch für eigene Zwecke (Abschnitt 5). Die Daten können in jedem Land verarbeitet werden, in dem Google Einrichtungen hat, mit den Garantien seiner Bedingungen. Wir geben die Daten an niemanden sonst weiter und verkaufen sie nie.</p>
 <p>Mehr: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Datenschutz und Sicherheit in Firebase</a> · <a href="https://policies.google.com/privacy?hl=de" rel="noopener noreferrer">Datenschutzerklärung von Google</a></p>
 
-<h2>9. Berechtigungen</h2>
-<p>Das Spiel nutzt die Internetverbindung (Statistiken, Werbung, Kauf) und die Berechtigung für die Werbe-ID, die das Werbe-SDK hinzufügt. Es greift nie auf deine Kontakte, Dateien, Fotos, deinen Standort, dein Mikrofon oder deine Kamera zu.</p>
+<h2>10. Berechtigungen</h2>
+<p>Das Spiel nutzt die Internetverbindung (Statistiken, Werbung, Kauf, Google Play Spiele) und die Berechtigung für die Werbe-ID, die das Werbe-SDK hinzufügt. Es greift nie auf deine Kontakte, Dateien, Fotos, deinen Standort, dein Mikrofon oder deine Kamera zu.</p>
 
-<h2>10. Kinder</h2>
+<h2>11. Kinder</h2>
 <p>Paws to Bed ist nicht für Kinder unter 13 Jahren gedacht, und wir erheben nicht wissentlich personenbezogene Daten von Kindern. Das Spiel fragt nie nach Alter oder Namen. Wenn du glaubst, dass Daten eines Kindes gesendet wurden, schreib uns.</p>
 
-<h2>11. Deine Rechte</h2>
+<h2>12. Deine Rechte</h2>
 <p>Je nach Wohnort (zum Beispiel nach der DSGVO) kannst du Auskunft, Berichtigung oder Löschung deiner Daten verlangen oder ihrer Nutzung widersprechen. Du kannst deine Einwilligung jederzeit in den Einstellungen widerrufen, ohne im Spiel etwas zu verlieren. Da unsere Statistiken weder Namen noch Kontaktdaten enthalten, können wir meist nicht erkennen, welche Daten deine sind; schreib uns, und wir tun, was wir können. Du kannst dich auch bei deiner Datenschutzaufsichtsbehörde beschweren.</p>
 
-<h2>12. Änderungen</h2>
+<h2>13. Änderungen</h2>
 <p>Ändert sich diese Erklärung, aktualisieren wir diese Seite und das Datum oben.</p>
 
 <h2>Kontakt</h2>
@@ -385,12 +407,13 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== ITALIANO -->
 <section id="it" lang="it">
 <h1>Paws to Bed — Informativa sulla privacy</h1>
-<p class="date">Data di entrata in vigore: 12 novembre 2026</p>
+<p class="date">Data di entrata in vigore: 13 novembre 2026</p>
 <p><strong>Paws to Bed</strong> (pacchetto Android <code>com.goodapps.pawstobed</code>) è un gioco rompicapo pubblicato da GoodApps Studio («noi»). Questa pagina spiega, in parole semplici, cosa il gioco conserva sul tuo dispositivo, cosa può inviare e quali scelte hai.</p>
 <div class="short">
 <h2>In breve</h2>
 <ul>
-<li><strong>Nessun account</strong>, nessun accesso. I tuoi progressi restano <strong>sul tuo dispositivo</strong>.</li>
+<li><strong>Nessun account</strong> da creare. I tuoi progressi restano <strong>sul tuo dispositivo</strong>.</li>
+<li>Se hai un profilo <strong>Google Play Giochi</strong>, i traguardi che ottieni nel gioco compaiono anche lì (sezione 7).</li>
 <li>Le statistiche di gioco e i rapporti sugli arresti anomali vanno a Google Firebase <strong>solo se scegli «Sì, volentieri»</strong>.</li>
 <li>Dal livello 35, il gioco può mostrare una pubblicità tra due livelli, mai dopo un livello perso. Le pubblicità sono fornite da Google AdMob, che raccoglie da sé alcuni dati (sezione 5). In Europa, nel Regno Unito e in Svizzera, Google chiede prima il tuo consenso.</li>
 <li>L’acquisto facoltativo «Senza pubblicità» le toglie per sempre. Il pagamento è gestito da Google Play; non vediamo mai i tuoi dati di pagamento.</li>
@@ -431,27 +454,31 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <h2>6. L’acquisto «Senza pubblicità»</h2>
 <p>L’acquisto facoltativo «Senza pubblicità» toglie per sempre le pubblicità tra un livello e l’altro. È gestito da Google Play secondo le condizioni di Google: non vediamo né conserviamo mai i tuoi dati di pagamento. Il telefono conserva la prova dell’acquisto, e Google Play lo ripristina se reinstalli il gioco con lo stesso account Google.</p>
 
-<h2>7. Per quanto tempo sono conservati i dati</h2>
+<h2>7. I traguardi in Google Play Giochi</h2>
+<p>Se il tuo telefono ha un profilo <strong>Google Play Giochi</strong>, Google ti fa accedere automaticamente all’avvio del gioco (un piccolo banner «Accesso eseguito come…», la prima volta). Il gioco non ha una propria schermata di accesso e non ti chiede nulla. Ogni traguardo che riscuoti nella pagina dei traguardi del gioco viene allora sbloccato anche nel tuo profilo Play Giochi: il gioco comunica a Google solo quali traguardi hai ottenuto. Non riceve mai il tuo indirizzo email né i tuoi contatti.</p>
+<p>Il tuo profilo Play Giochi (nome da giocatore, avatar, traguardi, chi può vederli) appartiene al tuo account Google ed è trattato da Google secondo la sua <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Informativa sulla privacy</a>; puoi cambiarne la visibilità o eliminarlo nell’app Play Giochi o nel tuo account Google. Google raccoglie anche dati diagnostici e di analisi sul suo SDK. Senza un profilo Play Giochi, non viene inviato nulla e il gioco funziona allo stesso modo.</p>
+
+<h2>8. Per quanto tempo sono conservati i dati</h2>
 <ul>
 <li><strong>Analytics:</strong> i dati dettagliati degli eventi sono conservati 2 mesi, poi cancellati; i rapporti aggregati non contengono identificatori.</li>
 <li><strong>Crashlytics:</strong> i rapporti sugli arresti anomali sono conservati 90 giorni.</li>
 <li><strong>Pubblicità:</strong> Google conserva i dati pubblicitari secondo le proprie norme.</li>
 </ul>
 
-<h2>8. Chi tratta i dati, e dove</h2>
+<h2>9. Chi tratta i dati, e dove</h2>
 <p>Per le statistiche, Google agisce per nostro conto come responsabile del trattamento, secondo le condizioni di Firebase. Per la pubblicità, Google usa i dati anche per scopi propri (sezione 5). I dati possono essere trattati in qualsiasi paese in cui Google ha strutture, con le garanzie previste dalle sue condizioni. Non condividiamo i dati con nessun altro e non li vendiamo mai.</p>
 <p>Per saperne di più: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy e sicurezza in Firebase</a> · <a href="https://policies.google.com/privacy?hl=it" rel="noopener noreferrer">Norme sulla privacy di Google</a></p>
 
-<h2>9. Autorizzazioni</h2>
-<p>Il gioco usa la connessione a internet (statistiche, pubblicità, acquisto) e l’autorizzazione per l’ID pubblicità aggiunta dall’SDK pubblicitario. Non accede mai a contatti, file, foto, posizione, microfono o fotocamera.</p>
+<h2>10. Autorizzazioni</h2>
+<p>Il gioco usa la connessione a internet (statistiche, pubblicità, acquisto, Google Play Giochi) e l’autorizzazione per l’ID pubblicità aggiunta dall’SDK pubblicitario. Non accede mai a contatti, file, foto, posizione, microfono o fotocamera.</p>
 
-<h2>10. Minori</h2>
+<h2>11. Minori</h2>
 <p>Paws to Bed non è pensato per i minori di 13 anni, e non raccogliamo consapevolmente dati personali di minori. Il gioco non chiede mai età né nome. Se pensi che siano stati inviati dati di un minore, scrivici.</p>
 
-<h2>11. I tuoi diritti</h2>
+<h2>12. I tuoi diritti</h2>
 <p>A seconda di dove vivi (ad esempio con il GDPR), puoi chiedere di accedere ai tuoi dati, rettificarli o cancellarli, oppure opporti al loro uso. Puoi revocare il consenso in qualsiasi momento nelle Impostazioni, senza perdere nulla nel gioco. Poiché le nostre statistiche non contengono nomi né recapiti, di solito non possiamo sapere quali dati sono tuoi; scrivici e faremo il possibile. Puoi anche presentare reclamo all’autorità per la protezione dei dati (in Italia, il Garante per la protezione dei dati personali).</p>
 
-<h2>12. Modifiche</h2>
+<h2>13. Modifiche</h2>
 <p>Se questa informativa cambia, aggiorneremo questa pagina e la data in alto.</p>
 
 <h2>Contatti</h2>
@@ -461,12 +488,13 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== PORTUGUÊS (BRASIL) -->
 <section id="pt-BR" lang="pt-BR">
 <h1>Paws to Bed — Política de privacidade</h1>
-<p class="date">Data de vigência: 12 de novembro de 2026</p>
+<p class="date">Data de vigência: 13 de novembro de 2026</p>
 <p><strong>Paws to Bed</strong> (pacote Android <code>com.goodapps.pawstobed</code>) é um jogo de quebra-cabeça publicado pela GoodApps Studio (“nós”). Esta página explica, em palavras simples, o que o jogo guarda no seu dispositivo, o que ele pode enviar e quais escolhas você tem.</p>
 <div class="short">
 <h2>Resumo</h2>
 <ul>
-<li><strong>Sem conta</strong>, sem login. Seu progresso fica <strong>no seu dispositivo</strong>.</li>
+<li><strong>Sem conta</strong> para criar. Seu progresso fica <strong>no seu dispositivo</strong>.</li>
+<li>Se você tem um perfil no <strong>Google Play Games</strong>, as conquistas que você ganha no jogo também aparecem lá (seção 7).</li>
 <li>As estatísticas de jogo e os relatórios de falhas vão para o Google Firebase <strong>só se você escolher “Sim, claro”</strong>.</li>
 <li>A partir da fase 35, o jogo pode mostrar um anúncio entre duas fases, nunca depois de uma fase perdida. Os anúncios vêm do Google AdMob, que coleta alguns dados por conta própria (seção 5). Na Europa, no Reino Unido e na Suíça, o Google pede seu consentimento antes.</li>
 <li>A compra opcional “Sem anúncios” remove esses anúncios de vez. O pagamento é feito pelo Google Play; nunca vemos seus dados de pagamento.</li>
@@ -507,27 +535,31 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <h2>6. A compra “Sem anúncios”</h2>
 <p>A compra opcional “Sem anúncios” remove de vez os anúncios entre as fases. Ela é processada pelo Google Play segundo os termos do Google: nunca vemos nem guardamos seus dados de pagamento. Seu celular guarda o registro da compra, e o Google Play a restaura se você reinstalar o jogo com a mesma conta Google.</p>
 
-<h2>7. Por quanto tempo os dados são guardados</h2>
+<h2>7. As conquistas no Google Play Games</h2>
+<p>Se o seu celular tem um perfil no <strong>Google Play Games</strong>, o Google faz o seu login automaticamente quando o jogo abre (um pequeno aviso “Conectado como…”, na primeira vez). O jogo não tem tela de login própria e não pede nada. Cada conquista que você coleta na página de conquistas do jogo também é desbloqueada no seu perfil do Play Games: o jogo só informa ao Google quais conquistas você ganhou. Ele nunca recebe seu e-mail nem seus contatos.</p>
+<p>Seu perfil do Play Games (nome de jogador, avatar, conquistas, quem pode vê-las) pertence à sua Conta do Google e é tratado pelo Google segundo a própria <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Política de Privacidade</a>; você pode mudar a visibilidade dele ou excluí-lo no app Play Games ou na sua Conta do Google. O Google também coleta dados de diagnóstico e de análise sobre o SDK dele. Sem perfil no Play Games, nada é enviado e o jogo funciona do mesmo jeito.</p>
+
+<h2>8. Por quanto tempo os dados são guardados</h2>
 <ul>
 <li><strong>Analytics:</strong> os dados detalhados dos eventos ficam 2 meses e depois são apagados; os relatórios agregados não contêm identificador.</li>
 <li><strong>Crashlytics:</strong> os relatórios de falhas ficam 90 dias.</li>
 <li><strong>Anúncios:</strong> o Google guarda os dados de publicidade segundo as próprias regras.</li>
 </ul>
 
-<h2>8. Quem trata os dados, e onde</h2>
+<h2>9. Quem trata os dados, e onde</h2>
 <p>Para as estatísticas, o Google age em nosso nome, como operador, segundo os termos do Firebase. Para os anúncios, o Google também usa os dados para fins próprios (seção 5). Os dados podem ser tratados em qualquer país onde o Google tenha instalações, com as garantias previstas em seus termos. Não compartilhamos os dados com mais ninguém e nunca os vendemos.</p>
 <p>Saiba mais: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacidade e segurança no Firebase</a> · <a href="https://policies.google.com/privacy?hl=pt-BR" rel="noopener noreferrer">Política de Privacidade do Google</a></p>
 
-<h2>9. Permissões</h2>
-<p>O jogo usa a conexão com a internet (estatísticas, anúncios, compra) e a permissão de ID de publicidade adicionada pelo SDK de anúncios. Ele nunca acessa seus contatos, arquivos, fotos, localização, microfone ou câmera.</p>
+<h2>10. Permissões</h2>
+<p>O jogo usa a conexão com a internet (estatísticas, anúncios, compra, Google Play Games) e a permissão de ID de publicidade adicionada pelo SDK de anúncios. Ele nunca acessa seus contatos, arquivos, fotos, localização, microfone ou câmera.</p>
 
-<h2>10. Crianças</h2>
+<h2>11. Crianças</h2>
 <p>Paws to Bed não foi feito para crianças com menos de 13 anos, e não coletamos conscientemente dados pessoais de crianças. O jogo nunca pede idade nem nome. Se você acha que dados de uma criança foram enviados, escreva para nós.</p>
 
-<h2>11. Seus direitos</h2>
+<h2>12. Seus direitos</h2>
 <p>Dependendo de onde você mora (por exemplo, pela LGPD ou pelo RGPD), você pode pedir acesso, correção ou exclusão dos seus dados, ou se opor ao uso deles. Você pode retirar seu consentimento a qualquer momento nas Configurações, sem perder nada no jogo. Como nossas estatísticas não têm nome nem contato, em geral não conseguimos saber quais dados são seus; escreva para nós e faremos o possível. Você também pode reclamar à autoridade de proteção de dados (no Brasil, a ANPD).</p>
 
-<h2>12. Alterações</h2>
+<h2>13. Alterações</h2>
 <p>Se esta política mudar, atualizaremos esta página e a data no topo.</p>
 
 <h2>Contato</h2>
@@ -537,12 +569,13 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== 日本語 -->
 <section id="ja" lang="ja">
 <h1>Paws to Bed — プライバシーポリシー</h1>
-<p class="date">発効日：2026年11月12日</p>
+<p class="date">発効日：2026年11月13日</p>
 <p><strong>Paws to Bed</strong>（Android パッケージ <code>com.goodapps.pawstobed</code>）は、GoodApps Studio（以下「当方」）が配信するパズルゲームです。このページでは、ゲームが端末に保存するもの、送信することがあるもの、そしてあなたが選べることを、わかりやすく説明します。</p>
 <div class="short">
 <h2>要点</h2>
 <ul>
-<li><strong>アカウント不要</strong>、ログインもありません。進行状況は<strong>あなたの端末の中</strong>に残ります。</li>
+<li><strong>アカウント作成は不要</strong>です。進行状況は<strong>あなたの端末の中</strong>に残ります。</li>
+<li><strong>Google Play ゲーム</strong>のプロフィールをお持ちなら、ゲームで獲得した実績がそこにも表示されます（第7項）。</li>
 <li>プレイ統計とクラッシュレポートが Google Firebase に送られるのは、<strong>「はい、いいですよ」を選んだときだけ</strong>です。</li>
 <li>レベル35以降、レベルとレベルの間に広告が表示されることがあります。失敗したレベルの後には表示しません。広告は Google AdMob が配信し、AdMob 自身が一部のデータを収集します（第5項）。欧州、英国、スイスでは、Google がまずあなたの同意を求めます。</li>
 <li>任意の購入「広告なし」で、これらの広告はずっと表示されなくなります。支払いは Google Play が処理し、当方が支払い情報を見ることはありません。</li>
@@ -583,27 +616,31 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <h2>6. 購入「広告なし」</h2>
 <p>任意の購入「広告なし」で、レベルの合間の広告がずっと表示されなくなります。購入は Google の規約に基づき Google Play が処理し、当方が支払い情報を見たり保存したりすることはありません。購入の記録はスマートフォンに残り、同じ Google アカウントでゲームを再インストールすると Google Play が復元します。</p>
 
-<h2>7. データの保存期間</h2>
+<h2>7. Google Play ゲームの実績</h2>
+<p>お使いの端末に<strong>Google Play ゲーム</strong>のプロフィールがある場合、ゲームの起動時に Google が自動でログインします（初回だけ「〜としてログイン中」という小さなバナーが出ます）。ゲーム独自のログイン画面はなく、何もお願いしません。ゲームの実績ページで受け取った実績は、Play ゲームのプロフィールでもロック解除されます。ゲームが Google に伝えるのは、獲得した実績だけです。メールアドレスや連絡先を受け取ることはありません。</p>
+<p>Play ゲームのプロフィール（プレイヤー名、アバター、実績、公開範囲）はあなたの Google アカウントに属し、Google が独自の<a href="https://policies.google.com/privacy" rel="noopener noreferrer">プライバシー ポリシー</a>に従って扱います。公開範囲の変更や削除は、Play ゲーム アプリまたは Google アカウントで行えます。Google はその SDK について診断・分析データも収集します。Play ゲームのプロフィールがなければ何も送られず、ゲームはこれまでどおり動きます。</p>
+
+<h2>8. データの保存期間</h2>
 <ul>
 <li><strong>Analytics：</strong>詳細なイベントデータは2か月保存され、その後削除されます。集計レポートには識別子が含まれません。</li>
 <li><strong>Crashlytics：</strong>クラッシュレポートは90日間保存されます。</li>
 <li><strong>広告：</strong>広告データは Google 独自のポリシーに従って保存されます。</li>
 </ul>
 
-<h2>8. データを処理する者と場所</h2>
+<h2>9. データを処理する者と場所</h2>
 <p>統計については、Google が Firebase の規約に基づき、当方に代わって処理者として処理します。広告については、Google は自らの目的のためにもデータを利用します（第5項）。データは、Google の規約に定める保護措置のもと、Google が施設を持つどの国でも処理される可能性があります。当方がデータをほかの誰かと共有したり、販売したりすることはありません。</p>
 <p>詳しくは：<a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Firebase のプライバシーとセキュリティ</a> · <a href="https://policies.google.com/privacy?hl=ja" rel="noopener noreferrer">Google プライバシー ポリシー</a></p>
 
-<h2>9. 権限</h2>
-<p>ゲームはインターネット接続（統計、広告、購入）と、広告 SDK が追加する広告 ID の権限を使います。連絡先、ファイル、写真、位置情報、マイク、カメラにアクセスすることはありません。</p>
+<h2>10. 権限</h2>
+<p>ゲームはインターネット接続（統計、広告、購入、Google Play ゲーム）と、広告 SDK が追加する広告 ID の権限を使います。連絡先、ファイル、写真、位置情報、マイク、カメラにアクセスすることはありません。</p>
 
-<h2>10. お子さまについて</h2>
+<h2>11. お子さまについて</h2>
 <p>Paws to Bed は13歳未満のお子さま向けに作られたものではなく、当方がお子さまの個人データを故意に収集することはありません。ゲームが年齢や名前を尋ねることはありません。お子さまのデータが送信されたと思われる場合は、ご連絡ください。</p>
 
-<h2>11. あなたの権利</h2>
+<h2>12. あなたの権利</h2>
 <p>お住まいの地域（たとえば GDPR）によっては、データの開示、訂正、削除を求めたり、利用に異議を述べたりできます。設定からいつでも同意を取り消すことができ、ゲーム内で何かを失うことはありません。当方の統計には名前も連絡先も含まれないため、通常どのデータがあなたのものかはわかりませんが、ご連絡いただければできる限り対応します。データ保護当局に苦情を申し立てることもできます。</p>
 
-<h2>12. 変更</h2>
+<h2>13. 変更</h2>
 <p>このポリシーを変更する場合は、このページと上部の日付を更新します。</p>
 
 <h2>お問い合わせ</h2>
