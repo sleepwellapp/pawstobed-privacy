@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Paws to Bed : politique de confidentialité, 7 langues (en, fr, es, de, it, pt-BR, ja). Date d'effet : 2026-11-13 (Google Play Jeux, section 7).
+  Paws to Bed : politique de confidentialité, 7 langues (en, fr, es, de, it, pt-BR, ja). Date d'effet : 2026-11-24 (mon03 : Firebase Remote Config, section 2 ; avant, 2026-11-23 pour le défi du jour envoyé à un ami, 2026-11-13 pour Google Play Jeux, section 7).
   Reprise de celle d'Acorn Crew (sa page, sa forme, son script de langue) ; vraie pour le build du test fermé, celui qui
   porte Firebase, la pub et l'achat No Ads (docs/PLAY-CONSOLE.md). Une page statique : ni police, ni script, ni image
   venus d'ailleurs ; aucun traceur. Le petit script en bas choisit la langue (?lang=xx, sinon #xx, sinon la langue du
@@ -9,6 +9,9 @@
   CE QUE LA PAGE DÉCLARE, ET D'OÙ ÇA VIENT (dépôt Paws to Bed) :
   - Sauvegarde locale, sans compte ni serveur : Assets/Scripts/View/Saves.cs, Assets/Scripts/Core/Save.cs (ligne
     « consent <réponse> <jour> »).
+  - La partie dans le nuage (fr82, 22 nov.) : une copie de save.txt dans les Jeux sauvegardés du compte Google Play Jeux du
+    joueur, s'il y est reconnu (Assets/Scripts/View/PlayJeux.Nuage.cs, docs/PLAY-JEUX.md « La partie dans le nuage ») ;
+    une phrase à la fin du §1 de chaque langue.
   - Firebase Analytics + Crashlytics, après « oui » seulement : docs/ANALYTICS.md §1-§3 (événements level_start,
     level_win, level_fail, help_use, coins_spend, purchase ; clés Crashlytics level et screen) ; démarrage coupé, ni
     identifiant publicitaire ni Android ID : Assets/Plugins/Android/PawsMesure.androidlib/AndroidManifest.xml.
@@ -17,6 +20,9 @@
   - Pubs : BRIEF (zéro pub avant le niveau 35, jamais après un échec, au plus une toutes les 3 minutes), No Ads 1,99 €.
   - Google Play Jeux (section 7, mission fr23) : docs/PLAY-JEUX.md ; données du SDK lues le 2026-11-12 sur
     https://developer.android.com/games/pgs/data-collection (identité de joueur, analyse, diagnostic, HTTPS).
+  - Le défi du jour envoyé à un ami (fr85, 23 nov.) : Assets/Scripts/View/GameView.Partage.cs, Partage.cs, l'image dans
+    le sous-dossier « partage » du cache privé (Assets/Plugins/Android/PawsPartage.androidlib), la feuille de partage
+    d'Android, l'événement daily_share (docs/ANALYTICS.md) ; une phrase à la fin du §1 et une puce au §2 de chaque langue.
   - Contact : celui d'Acorn Crew et de Dev Idle (sylvain69740@gmail.com).
 
   PAGES OFFICIELLES (lues le 2026-11-12, ou par Acorn Crew le 2026-11-06) :
@@ -83,7 +89,7 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== ENGLISH -->
 <section id="en" lang="en">
 <h1>Paws to Bed — Privacy Policy</h1>
-<p class="date">Effective date: November 13, 2026</p>
+<p class="date">Effective date: November 24, 2026</p>
 <p><strong>Paws to Bed</strong> (Android package <code>com.goodapps.pawstobed</code>) is a puzzle game published by GoodApps Studio (“we”). This page explains, in plain words, what the game keeps on your device, what it can send, and the choices you have.</p>
 <div class="short">
 <h2>In short</h2>
@@ -98,17 +104,19 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 </div>
 
 <h2>1. What stays on your device</h2>
-<p>The game saves your progress in the app’s private storage: level reached, coins, helps, lives, the cats’ house, daily quests, sound and music settings, and your answer to the statistics question with the date you gave it (the record of your choice). We have no game server and never receive this file. If your phone’s system backup is on, it may keep a copy in your own Google account; we have no access to it. Uninstalling the game or clearing its data deletes everything.</p>
+<p>The game saves your progress in the app’s private storage: level reached, coins, helps, lives, the cats’ house, daily quests, sound and music settings, and your answer to the statistics question with the date you gave it (the record of your choice). We have no game server and never receive this file. If your phone’s system backup is on, it may keep a copy in your own Google account; we have no access to it. Uninstalling the game or clearing its data deletes everything. If you use Google Play Games, the game also keeps your progress in your Google Play Games account, so it comes back on a new phone. We have no access to it; you can delete it from the Google Play Games settings. If you tap the send button on the win card of a daily challenge you have just won, the game draws a picture of that pile (its shape, the date, your hearts left) in its private storage and opens Android’s share sheet: you choose the app and the person. The picture, a sentence and a link to the game’s store page go only where you send them, never to us; nothing leaves if you close the sheet.</p>
 
 <h2>2. Statistics, if you say yes</h2>
 <p>If you agree, the game uses <strong>Google Analytics for Firebase</strong> and <strong>Firebase Crashlytics</strong>:</p>
 <ul>
 <li><strong>Game events:</strong> a level started, won or failed (level number, attempt, duration, helps used, hearts left), a help used, coins spent, a purchase made (which item and at which level, never the price or the receipt).</li>
+<li><strong>Daily challenge sent:</strong> that you opened the share sheet after winning the daily challenge (the day’s pile number, hearts left, your level), never who you sent it to, or whether you did.</li>
 <li><strong>Events recorded automatically by Firebase:</strong> first launch, session start, time in the app, app or system update, uninstall.</li>
 <li><strong>Technical information:</strong> device brand and model, Android version, app version, language.</li>
 <li><strong>Random identifiers</strong> created at installation (app instance ID, Crashlytics and Firebase installation IDs). They change if you reinstall the game or clear its data.</li>
 <li><strong>Approximate location:</strong> country and region, estimated by Google from your IP address. For users in the EU, the UK and Switzerland, Google Analytics does not log or store the IP address.</li>
 <li><strong>Crash reports:</strong> the technical trace of the crash, the device and app state at that moment, and the level and screen you were on.</li>
+<li><strong>Game settings:</strong> the game asks <strong>Firebase Remote Config</strong> for the numbers we adjust from a distance (how often an ad shows between levels, the coins and helps you win). It sends the Firebase installation ID above and receives these numbers. We may give two groups of players slightly different numbers to compare them. Without your yes, the game keeps the numbers built into it.</li>
 </ul>
 <p><strong>Why:</strong> to fix crashes, to tune how hard the levels are, and to see what players enjoy. Firebase collects no advertising ID, and these statistics are not used for advertising. <strong>Legal basis:</strong> your consent (Article 6(1)(a) GDPR).</p>
 
@@ -164,7 +172,7 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== FRANÇAIS -->
 <section id="fr" lang="fr">
 <h1>Paws to Bed — Politique de confidentialité</h1>
-<p class="date">Date d’effet : 13 novembre 2026</p>
+<p class="date">Date d’effet : 24 novembre 2026</p>
 <p><strong>Paws to Bed</strong> (package Android <code>com.goodapps.pawstobed</code>) est un jeu de réflexion publié par GoodApps Studio (« nous »). Cette page explique simplement ce que le jeu garde sur votre appareil, ce qu’il peut envoyer, et les choix que vous avez.</p>
 <div class="short">
 <h2>L’essentiel</h2>
@@ -179,17 +187,19 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 </div>
 
 <h2>1. Ce qui reste sur votre appareil</h2>
-<p>Le jeu enregistre votre progression dans le stockage privé de l’appli : niveau atteint, pièces, aides, vies, la maison des chats, quêtes du jour, réglages du son et de la musique, et votre réponse à la question des statistiques avec sa date (la trace de votre choix). Nous n’avons aucun serveur de jeu et ne recevons jamais ce fichier. Si la sauvegarde système de votre téléphone est activée, elle peut en garder une copie dans votre propre compte Google ; nous n’y avons pas accès. Désinstaller le jeu ou effacer ses données supprime tout.</p>
+<p>Le jeu enregistre votre progression dans le stockage privé de l’appli : niveau atteint, pièces, aides, vies, la maison des chats, quêtes du jour, réglages du son et de la musique, et votre réponse à la question des statistiques avec sa date (la trace de votre choix). Nous n’avons aucun serveur de jeu et ne recevons jamais ce fichier. Si la sauvegarde système de votre téléphone est activée, elle peut en garder une copie dans votre propre compte Google ; nous n’y avons pas accès. Désinstaller le jeu ou effacer ses données supprime tout. Si vous utilisez Google Play Jeux, le jeu garde aussi votre progression dans votre compte Google Play Jeux, pour la retrouver sur un nouveau téléphone. Nous n’y avons pas accès ; vous pouvez la supprimer depuis les paramètres de Google Play Jeux. Si vous touchez le bouton d’envoi sur la carte « Bravo ! » d’un défi du jour que vous venez de gagner, le jeu dessine l’image de ce tas (sa forme, la date, vos cœurs restants) dans son stockage privé et ouvre la feuille de partage d’Android : vous choisissez l’appli et la personne. L’image, une phrase et le lien de la fiche du jeu ne vont que là où vous les envoyez, jamais chez nous ; rien ne part si vous fermez la feuille.</p>
 
 <h2>2. Les statistiques, si vous dites oui</h2>
 <p>Si vous acceptez, le jeu utilise <strong>Google Analytics pour Firebase</strong> et <strong>Firebase Crashlytics</strong> :</p>
 <ul>
 <li><strong>Événements de jeu :</strong> un niveau commencé, gagné ou raté (numéro, essai, durée, aides utilisées, cœurs restants), une aide utilisée, des pièces dépensées, un achat (quel article et à quel niveau, jamais le prix ni le reçu).</li>
+<li><strong>Défi du jour envoyé :</strong> le fait que vous avez ouvert la feuille de partage après avoir gagné le défi du jour (le numéro du tas, les cœurs restants, votre niveau), jamais à qui vous l’envoyez, ni si vous l’avez envoyé.</li>
 <li><strong>Événements enregistrés automatiquement par Firebase :</strong> premier lancement, début de session, temps passé, mise à jour de l’appli ou du système, désinstallation.</li>
 <li><strong>Informations techniques :</strong> marque et modèle de l’appareil, version d’Android, version de l’appli, langue.</li>
 <li><strong>Identifiants aléatoires</strong> créés à l’installation (identifiant d’instance, identifiants d’installation Crashlytics et Firebase). Ils changent si vous réinstallez le jeu ou effacez ses données.</li>
 <li><strong>Position approximative :</strong> pays et région, estimés par Google à partir de votre adresse IP. Dans l’UE, au Royaume-Uni et en Suisse, Google Analytics ne journalise ni ne garde l’adresse IP.</li>
 <li><strong>Rapports de plantage :</strong> la trace technique du plantage, l’état de l’appareil et de l’appli à ce moment, le niveau et l’écran en cours.</li>
+<li><strong>Réglages du jeu :</strong> le jeu demande à <strong>Firebase Remote Config</strong> les nombres que nous réglons à distance (la fréquence des pubs entre deux niveaux, les pièces et les aides gagnées). Il envoie l’identifiant d’installation Firebase ci-dessus et reçoit ces nombres. Nous pouvons donner à deux groupes de joueurs des nombres un peu différents pour les comparer. Sans votre oui, le jeu garde les nombres qu’il contient.</li>
 </ul>
 <p><strong>Pourquoi :</strong> corriger les plantages, régler la difficulté des niveaux, voir ce qui plaît. Firebase ne collecte pas l’identifiant publicitaire, et ces statistiques ne servent pas à la publicité. <strong>Base légale :</strong> votre consentement (article 6.1.a du RGPD).</p>
 
@@ -245,7 +255,7 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== ESPAÑOL -->
 <section id="es" lang="es">
 <h1>Paws to Bed — Política de privacidad</h1>
-<p class="date">Fecha de entrada en vigor: 13 de noviembre de 2026</p>
+<p class="date">Fecha de entrada en vigor: 24 de noviembre de 2026</p>
 <p><strong>Paws to Bed</strong> (paquete de Android <code>com.goodapps.pawstobed</code>) es un juego de puzles publicado por GoodApps Studio («nosotros»). Esta página explica, con palabras sencillas, qué guarda el juego en tu dispositivo, qué puede enviar y qué opciones tienes.</p>
 <div class="short">
 <h2>En resumen</h2>
@@ -260,17 +270,19 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 </div>
 
 <h2>1. Lo que se queda en tu dispositivo</h2>
-<p>El juego guarda tu progreso en el almacenamiento privado de la app: nivel alcanzado, monedas, ayudas, vidas, la casa de los gatos, misiones del día, ajustes de sonido y música, y tu respuesta a la pregunta de las estadísticas con su fecha (la constancia de tu elección). No tenemos servidor de juego y nunca recibimos este archivo. Si la copia de seguridad del sistema está activada, puede guardar una copia en tu propia cuenta de Google; no tenemos acceso a ella. Desinstalar el juego o borrar sus datos lo elimina todo.</p>
+<p>El juego guarda tu progreso en el almacenamiento privado de la app: nivel alcanzado, monedas, ayudas, vidas, la casa de los gatos, misiones del día, ajustes de sonido y música, y tu respuesta a la pregunta de las estadísticas con su fecha (la constancia de tu elección). No tenemos servidor de juego y nunca recibimos este archivo. Si la copia de seguridad del sistema está activada, puede guardar una copia en tu propia cuenta de Google; no tenemos acceso a ella. Desinstalar el juego o borrar sus datos lo elimina todo. Si usas Google Play Juegos, el juego también guarda tu progreso en tu cuenta de Google Play Juegos, para recuperarlo en un teléfono nuevo. No tenemos acceso a él; puedes borrarlo desde los ajustes de Google Play Juegos. Si tocas el botón de enviar en la tarjeta de victoria de un desafío del día que acabas de ganar, el juego dibuja una imagen de ese montón (su forma, la fecha, tus corazones restantes) en su almacenamiento privado y abre el menú para compartir de Android: tú eliges la app y la persona. La imagen, una frase y el enlace a la ficha del juego solo van adonde tú los envías, nunca a nosotros; si cierras el menú, no sale nada.</p>
 
 <h2>2. Las estadísticas, si dices que sí</h2>
 <p>Si aceptas, el juego usa <strong>Google Analytics para Firebase</strong> y <strong>Firebase Crashlytics</strong>:</p>
 <ul>
 <li><strong>Eventos de juego:</strong> un nivel empezado, ganado o fallido (número, intento, duración, ayudas usadas, corazones restantes), una ayuda usada, monedas gastadas, una compra (qué artículo y en qué nivel, nunca el precio ni el recibo).</li>
+<li><strong>Desafío del día enviado:</strong> que abriste el menú para compartir tras ganar el desafío del día (el número del montón, los corazones restantes, tu nivel), nunca a quién lo envías ni si llegaste a enviarlo.</li>
 <li><strong>Eventos registrados automáticamente por Firebase:</strong> primer inicio, inicio de sesión, tiempo en la app, actualización de la app o del sistema, desinstalación.</li>
 <li><strong>Información técnica:</strong> marca y modelo del dispositivo, versión de Android, versión de la app, idioma.</li>
 <li><strong>Identificadores aleatorios</strong> creados al instalar (ID de instancia, ID de instalación de Crashlytics y Firebase). Cambian si reinstalas el juego o borras sus datos.</li>
 <li><strong>Ubicación aproximada:</strong> país y región, estimados por Google a partir de tu dirección IP. En la UE, el Reino Unido y Suiza, Google Analytics no registra ni guarda la dirección IP.</li>
 <li><strong>Informes de errores:</strong> el rastro técnico del cierre, el estado del dispositivo y de la app en ese momento, y el nivel y la pantalla en los que estabas.</li>
+<li><strong>Ajustes del juego:</strong> el juego pide a <strong>Firebase Remote Config</strong> los números que ajustamos a distancia (cada cuánto sale un anuncio entre niveles, las monedas y ayudas que ganas). Envía el ID de instalación de Firebase indicado arriba y recibe esos números. Podemos dar a dos grupos de jugadores números un poco distintos para compararlos. Sin tu sí, el juego mantiene los números que trae.</li>
 </ul>
 <p><strong>Para qué:</strong> corregir errores, ajustar la dificultad de los niveles y ver qué gusta a los jugadores. Firebase no recoge el ID de publicidad, y estas estadísticas no se usan para publicidad. <strong>Base jurídica:</strong> tu consentimiento (artículo 6.1.a del RGPD).</p>
 
@@ -326,7 +338,7 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== DEUTSCH -->
 <section id="de" lang="de">
 <h1>Paws to Bed — Datenschutzerklärung</h1>
-<p class="date">Gültig ab: 13. November 2026</p>
+<p class="date">Gültig ab: 24. November 2026</p>
 <p><strong>Paws to Bed</strong> (Android-Paket <code>com.goodapps.pawstobed</code>) ist ein Puzzlespiel von GoodApps Studio („wir“). Diese Seite erklärt in einfachen Worten, was das Spiel auf deinem Gerät speichert, was es senden kann und welche Wahl du hast.</p>
 <div class="short">
 <h2>Kurz gesagt</h2>
@@ -341,17 +353,19 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 </div>
 
 <h2>1. Was auf deinem Gerät bleibt</h2>
-<p>Das Spiel speichert deinen Fortschritt im privaten Speicher der App: erreichtes Level, Münzen, Hilfen, Leben, das Katzenhaus, Tagesaufgaben, Ton- und Musikeinstellungen sowie deine Antwort auf die Statistik-Frage mit Datum (der Nachweis deiner Wahl). Wir haben keinen Spielserver und erhalten diese Datei nie. Ist die Systemsicherung deines Telefons aktiv, kann sie eine Kopie in deinem eigenen Google-Konto behalten; darauf haben wir keinen Zugriff. Wenn du das Spiel deinstallierst oder seine Daten löschst, ist alles weg.</p>
+<p>Das Spiel speichert deinen Fortschritt im privaten Speicher der App: erreichtes Level, Münzen, Hilfen, Leben, das Katzenhaus, Tagesaufgaben, Ton- und Musikeinstellungen sowie deine Antwort auf die Statistik-Frage mit Datum (der Nachweis deiner Wahl). Wir haben keinen Spielserver und erhalten diese Datei nie. Ist die Systemsicherung deines Telefons aktiv, kann sie eine Kopie in deinem eigenen Google-Konto behalten; darauf haben wir keinen Zugriff. Wenn du das Spiel deinstallierst oder seine Daten löschst, ist alles weg. Wenn du Google Play Spiele nutzt, speichert das Spiel deinen Fortschritt auch in deinem Google Play Spiele-Konto, damit er auf einem neuen Handy zurückkommt. Wir haben keinen Zugriff darauf; du kannst ihn in den Einstellungen von Google Play Spiele löschen. Wenn du nach einer gewonnenen Tages-Challenge auf der Siegeskarte auf den Senden-Knopf tippst, zeichnet das Spiel ein Bild dieses Haufens (seine Form, das Datum, deine übrigen Herzen) in seinen privaten Speicher und öffnet das Teilen-Menü von Android: Du wählst die App und die Person. Das Bild, ein Satz und ein Link zur Store-Seite des Spiels gehen nur dorthin, wohin du sie schickst, nie an uns; schließt du das Menü, geht nichts raus.</p>
 
 <h2>2. Statistiken, wenn du Ja sagst</h2>
 <p>Wenn du zustimmst, nutzt das Spiel <strong>Google Analytics für Firebase</strong> und <strong>Firebase Crashlytics</strong>:</p>
 <ul>
 <li><strong>Spielereignisse:</strong> ein Level begonnen, gewonnen oder verloren (Nummer, Versuch, Dauer, genutzte Hilfen, übrige Herzen), eine genutzte Hilfe, ausgegebene Münzen, ein Kauf (welcher Artikel und in welchem Level, nie der Preis oder der Beleg).</li>
+<li><strong>Tages-Challenge gesendet:</strong> dass du nach einer gewonnenen Tages-Challenge das Teilen-Menü geöffnet hast (Nummer des Haufens, übrige Herzen, dein Level), nie an wen und ob du es geschickt hast.</li>
 <li><strong>Automatisch von Firebase erfasste Ereignisse:</strong> erster Start, Sitzungsbeginn, Zeit in der App, App- oder System-Update, Deinstallation.</li>
 <li><strong>Technische Angaben:</strong> Marke und Modell des Geräts, Android-Version, App-Version, Sprache.</li>
 <li><strong>Zufällige Kennungen</strong>, die bei der Installation entstehen (App-Instanz-ID, Installations-IDs von Crashlytics und Firebase). Sie ändern sich, wenn du das Spiel neu installierst oder seine Daten löschst.</li>
 <li><strong>Ungefährer Standort:</strong> Land und Region, von Google aus deiner IP-Adresse geschätzt. Für Nutzer in der EU, im Vereinigten Königreich und in der Schweiz protokolliert und speichert Google Analytics die IP-Adresse nicht.</li>
 <li><strong>Absturzberichte:</strong> die technische Spur des Absturzes, der Zustand von Gerät und App in diesem Moment sowie das Level und der Bildschirm, auf dem du warst.</li>
+<li><strong>Spieleinstellungen:</strong> Das Spiel fragt bei <strong>Firebase Remote Config</strong> die Zahlen ab, die wir aus der Ferne einstellen (wie oft zwischen zwei Leveln Werbung kommt, die Münzen und Hilfen, die du gewinnst). Es sendet die oben genannte Firebase-Installations-ID und erhält diese Zahlen. Wir können zwei Gruppen von Spielern leicht unterschiedliche Zahlen geben, um sie zu vergleichen. Ohne dein Ja behält das Spiel die eingebauten Zahlen.</li>
 </ul>
 <p><strong>Wozu:</strong> um Abstürze zu beheben, die Schwierigkeit der Levels abzustimmen und zu sehen, was Spielern gefällt. Firebase erhebt keine Werbe-ID, und diese Statistiken dienen nicht der Werbung. <strong>Rechtsgrundlage:</strong> deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).</p>
 
@@ -407,7 +421,7 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== ITALIANO -->
 <section id="it" lang="it">
 <h1>Paws to Bed — Informativa sulla privacy</h1>
-<p class="date">Data di entrata in vigore: 13 novembre 2026</p>
+<p class="date">Data di entrata in vigore: 24 novembre 2026</p>
 <p><strong>Paws to Bed</strong> (pacchetto Android <code>com.goodapps.pawstobed</code>) è un gioco rompicapo pubblicato da GoodApps Studio («noi»). Questa pagina spiega, in parole semplici, cosa il gioco conserva sul tuo dispositivo, cosa può inviare e quali scelte hai.</p>
 <div class="short">
 <h2>In breve</h2>
@@ -422,17 +436,19 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 </div>
 
 <h2>1. Cosa resta sul tuo dispositivo</h2>
-<p>Il gioco salva i tuoi progressi nella memoria privata dell’app: livello raggiunto, monete, aiuti, vite, la casa dei gatti, missioni del giorno, impostazioni di suoni e musica, e la tua risposta alla domanda sulle statistiche con la sua data (la prova della tua scelta). Non abbiamo un server di gioco e non riceviamo mai questo file. Se il backup di sistema del telefono è attivo, può conservarne una copia nel tuo account Google; noi non vi abbiamo accesso. Disinstallare il gioco o cancellarne i dati elimina tutto.</p>
+<p>Il gioco salva i tuoi progressi nella memoria privata dell’app: livello raggiunto, monete, aiuti, vite, la casa dei gatti, missioni del giorno, impostazioni di suoni e musica, e la tua risposta alla domanda sulle statistiche con la sua data (la prova della tua scelta). Non abbiamo un server di gioco e non riceviamo mai questo file. Se il backup di sistema del telefono è attivo, può conservarne una copia nel tuo account Google; noi non vi abbiamo accesso. Disinstallare il gioco o cancellarne i dati elimina tutto. Se usi Google Play Giochi, il gioco conserva i tuoi progressi anche nel tuo account Google Play Giochi, così li ritrovi su un nuovo telefono. Non vi abbiamo accesso; puoi cancellarli dalle impostazioni di Google Play Giochi. Se tocchi il pulsante di invio sulla carta di vittoria di una sfida del giorno appena vinta, il gioco disegna un’immagine di quel mucchio (la sua forma, la data, i cuori rimasti) nella sua memoria privata e apre il menu di condivisione di Android: scegli tu l’app e la persona. L’immagine, una frase e il link alla pagina del gioco vanno solo dove li mandi, mai a noi; se chiudi il menu, non parte nulla.</p>
 
 <h2>2. Le statistiche, se dici di sì</h2>
 <p>Se accetti, il gioco usa <strong>Google Analytics per Firebase</strong> e <strong>Firebase Crashlytics</strong>:</p>
 <ul>
 <li><strong>Eventi di gioco:</strong> un livello iniziato, vinto o perso (numero, tentativo, durata, aiuti usati, cuori rimasti), un aiuto usato, monete spese, un acquisto (quale articolo e a quale livello, mai il prezzo né la ricevuta).</li>
+<li><strong>Sfida del giorno inviata:</strong> il fatto che hai aperto il menu di condivisione dopo aver vinto la sfida del giorno (il numero del mucchio, i cuori rimasti, il tuo livello), mai a chi la mandi né se l’hai mandata.</li>
 <li><strong>Eventi registrati automaticamente da Firebase:</strong> primo avvio, inizio sessione, tempo nell’app, aggiornamento dell’app o del sistema, disinstallazione.</li>
 <li><strong>Informazioni tecniche:</strong> marca e modello del dispositivo, versione di Android, versione dell’app, lingua.</li>
 <li><strong>Identificatori casuali</strong> creati all’installazione (ID istanza, ID di installazione di Crashlytics e Firebase). Cambiano se reinstalli il gioco o ne cancelli i dati.</li>
 <li><strong>Posizione approssimativa:</strong> paese e regione, stimati da Google dal tuo indirizzo IP. Per gli utenti nell’UE, nel Regno Unito e in Svizzera, Google Analytics non registra né conserva l’indirizzo IP.</li>
 <li><strong>Rapporti sugli arresti anomali:</strong> la traccia tecnica dell’arresto, lo stato del dispositivo e dell’app in quel momento, il livello e la schermata in cui eri.</li>
+<li><strong>Impostazioni del gioco:</strong> il gioco chiede a <strong>Firebase Remote Config</strong> i numeri che regoliamo a distanza (ogni quanto compare una pubblicità tra due livelli, le monete e gli aiuti che vinci). Invia l’ID di installazione Firebase indicato sopra e riceve questi numeri. Possiamo dare a due gruppi di giocatori numeri un po’ diversi per confrontarli. Senza il tuo sì, il gioco tiene i numeri che contiene.</li>
 </ul>
 <p><strong>Perché:</strong> per correggere gli arresti anomali, regolare la difficoltà dei livelli e capire cosa piace ai giocatori. Firebase non raccoglie l’ID pubblicità, e queste statistiche non servono alla pubblicità. <strong>Base giuridica:</strong> il tuo consenso (articolo 6, paragrafo 1, lettera a) del GDPR).</p>
 
@@ -488,7 +504,7 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== PORTUGUÊS (BRASIL) -->
 <section id="pt-BR" lang="pt-BR">
 <h1>Paws to Bed — Política de privacidade</h1>
-<p class="date">Data de vigência: 13 de novembro de 2026</p>
+<p class="date">Data de vigência: 24 de novembro de 2026</p>
 <p><strong>Paws to Bed</strong> (pacote Android <code>com.goodapps.pawstobed</code>) é um jogo de quebra-cabeça publicado pela GoodApps Studio (“nós”). Esta página explica, em palavras simples, o que o jogo guarda no seu dispositivo, o que ele pode enviar e quais escolhas você tem.</p>
 <div class="short">
 <h2>Resumo</h2>
@@ -503,17 +519,19 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 </div>
 
 <h2>1. O que fica no seu dispositivo</h2>
-<p>O jogo salva seu progresso no armazenamento privado do app: fase alcançada, moedas, ajudas, vidas, a casa dos gatos, missões do dia, ajustes de som e música, e sua resposta à pergunta das estatísticas com a data (o registro da sua escolha). Não temos servidor de jogo e nunca recebemos esse arquivo. Se o backup do sistema do celular estiver ativado, ele pode guardar uma cópia na sua própria conta Google; não temos acesso a ela. Desinstalar o jogo ou limpar seus dados apaga tudo.</p>
+<p>O jogo salva seu progresso no armazenamento privado do app: fase alcançada, moedas, ajudas, vidas, a casa dos gatos, missões do dia, ajustes de som e música, e sua resposta à pergunta das estatísticas com a data (o registro da sua escolha). Não temos servidor de jogo e nunca recebemos esse arquivo. Se o backup do sistema do celular estiver ativado, ele pode guardar uma cópia na sua própria conta Google; não temos acesso a ela. Desinstalar o jogo ou limpar seus dados apaga tudo. Se você usa o Google Play Games, o jogo também guarda seu progresso na sua conta do Google Play Games, para que ele volte em um celular novo. Não temos acesso a ele; você pode apagá-lo nas configurações do Google Play Games. Se você tocar no botão de enviar no cartão de vitória de um desafio do dia que acabou de vencer, o jogo desenha uma imagem dessa pilha (o formato, a data, os corações restantes) no armazenamento privado dele e abre o menu de compartilhamento do Android: você escolhe o app e a pessoa. A imagem, uma frase e o link da página do jogo só vão para onde você enviar, nunca para nós; se você fechar o menu, nada sai.</p>
 
 <h2>2. As estatísticas, se você disser sim</h2>
 <p>Se você aceitar, o jogo usa o <strong>Google Analytics para Firebase</strong> e o <strong>Firebase Crashlytics</strong>:</p>
 <ul>
 <li><strong>Eventos do jogo:</strong> uma fase iniciada, vencida ou perdida (número, tentativa, duração, ajudas usadas, corações restantes), uma ajuda usada, moedas gastas, uma compra (qual item e em qual fase, nunca o preço nem o recibo).</li>
+<li><strong>Desafio do dia enviado:</strong> o fato de você ter aberto o menu de compartilhamento depois de vencer o desafio do dia (o número da pilha, os corações restantes, sua fase), nunca para quem você enviou nem se enviou.</li>
 <li><strong>Eventos registrados automaticamente pelo Firebase:</strong> primeira abertura, início de sessão, tempo no app, atualização do app ou do sistema, desinstalação.</li>
 <li><strong>Informações técnicas:</strong> marca e modelo do aparelho, versão do Android, versão do app, idioma.</li>
 <li><strong>Identificadores aleatórios</strong> criados na instalação (ID da instância, IDs de instalação do Crashlytics e do Firebase). Eles mudam se você reinstalar o jogo ou limpar seus dados.</li>
 <li><strong>Localização aproximada:</strong> país e região, estimados pelo Google a partir do seu endereço IP. Para usuários na UE, no Reino Unido e na Suíça, o Google Analytics não registra nem guarda o endereço IP.</li>
 <li><strong>Relatórios de falhas:</strong> o rastro técnico da falha, o estado do aparelho e do app naquele momento, e a fase e a tela em que você estava.</li>
+<li><strong>Ajustes do jogo:</strong> o jogo pede ao <strong>Firebase Remote Config</strong> os números que ajustamos a distância (a frequência dos anúncios entre fases, as moedas e ajudas que você ganha). Ele envia o ID de instalação do Firebase indicado acima e recebe esses números. Podemos dar a dois grupos de jogadores números um pouco diferentes para compará-los. Sem o seu sim, o jogo mantém os números que já traz.</li>
 </ul>
 <p><strong>Para quê:</strong> corrigir falhas, ajustar a dificuldade das fases e ver do que os jogadores gostam. O Firebase não coleta o ID de publicidade, e essas estatísticas não são usadas para publicidade. <strong>Base legal:</strong> seu consentimento (LGPD, art. 7º, I; RGPD, art. 6(1)(a)).</p>
 
@@ -569,7 +587,7 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 <!-- ============================================================== 日本語 -->
 <section id="ja" lang="ja">
 <h1>Paws to Bed — プライバシーポリシー</h1>
-<p class="date">発効日：2026年11月13日</p>
+<p class="date">発効日：2026年11月24日</p>
 <p><strong>Paws to Bed</strong>（Android パッケージ <code>com.goodapps.pawstobed</code>）は、GoodApps Studio（以下「当方」）が配信するパズルゲームです。このページでは、ゲームが端末に保存するもの、送信することがあるもの、そしてあなたが選べることを、わかりやすく説明します。</p>
 <div class="short">
 <h2>要点</h2>
@@ -584,17 +602,19 @@ footer{color:var(--mute);font-size:.85rem;padding-top:2rem;padding-bottom:2.5rem
 </div>
 
 <h2>1. 端末に残るもの</h2>
-<p>ゲームは進行状況をアプリ専用の保存領域に保存します：到達したレベル、コイン、お助けアイテム、ライフ、ねこのおうち、今日のクエスト、サウンドと音楽の設定、そして統計の質問へのあなたの回答とその日付（選択の記録）です。当方にはゲームサーバーがなく、このファイルを受け取ることはありません。スマートフォンのシステムバックアップがオンの場合、あなた自身の Google アカウントにコピーが保存されることがありますが、当方はアクセスできません。ゲームをアンインストールするか、データを消去すると、すべて削除されます。</p>
+<p>ゲームは進行状況をアプリ専用の保存領域に保存します：到達したレベル、コイン、お助けアイテム、ライフ、ねこのおうち、今日のクエスト、サウンドと音楽の設定、そして統計の質問へのあなたの回答とその日付（選択の記録）です。当方にはゲームサーバーがなく、このファイルを受け取ることはありません。スマートフォンのシステムバックアップがオンの場合、あなた自身の Google アカウントにコピーが保存されることがありますが、当方はアクセスできません。ゲームをアンインストールするか、データを消去すると、すべて削除されます。Google Play ゲームをお使いの場合、進行状況はあなたの Google Play ゲーム アカウントにも保存され、新しいスマートフォンでも続きから遊べます。私たちはこのデータにアクセスできません。Google Play ゲームの設定から削除できます。今日のチャレンジをクリアした画面で送るボタンをタップすると、ゲームはその山の画像（形、日付、残りのハート）を端末内の専用の保存場所に作り、Android の共有メニューを開きます。送るアプリと相手はあなたが選びます。画像と一文、ゲームのストアページへのリンクは、あなたが送った先にだけ届き、私たちには届きません。メニューを閉じれば何も送られません。</p>
 
 <h2>2. 「はい」を選んだ場合の統計</h2>
 <p>同意すると、ゲームは <strong>Google Analytics for Firebase</strong> と <strong>Firebase Crashlytics</strong> を使います：</p>
 <ul>
 <li><strong>ゲーム内のイベント：</strong>レベルの開始・クリア・失敗（レベル番号、挑戦回数、所要時間、使ったお助け、残りのハート）、お助けの使用、コインの消費、購入（どの商品をどのレベルで。価格やレシートは送りません）。</li>
+<li><strong>今日のチャレンジの送信：</strong>今日のチャレンジをクリアしたあとに共有メニューを開いたこと（山の番号、残りのハート、あなたのレベル）。誰に送ったか、実際に送ったかは分かりません。</li>
 <li><strong>Firebase が自動で記録するイベント：</strong>初回起動、セッション開始、アプリの利用時間、アプリやシステムの更新、アンインストール。</li>
 <li><strong>技術情報：</strong>端末のメーカーと機種、Android のバージョン、アプリのバージョン、言語。</li>
 <li><strong>ランダムな識別子：</strong>インストール時に作られるもの（アプリインスタンス ID、Crashlytics と Firebase のインストール ID）。ゲームを再インストールするかデータを消去すると変わります。</li>
 <li><strong>おおよその位置：</strong>IP アドレスから Google が推定する国と地域。EU、英国、スイスのユーザーについては、Google アナリティクスは IP アドレスを記録・保存しません。</li>
 <li><strong>クラッシュレポート：</strong>クラッシュの技術的な記録、その時点の端末とアプリの状態、プレイ中のレベルと画面。</li>
+<li><strong>ゲームの設定：</strong>ゲームは <strong>Firebase Remote Config</strong> に、私たちが離れたところから調整する数値（レベルの間に広告が出る頻度、獲得するコインとヘルプ）を問い合わせます。上記の Firebase インストール ID を送り、これらの数値を受け取ります。比較のため、2 つのグループのプレイヤーに少し違う数値を渡すことがあります。同意がない場合、ゲームは内蔵の数値を使います。</li>
 </ul>
 <p><strong>目的：</strong>クラッシュを直し、レベルの難しさを調整し、プレイヤーが楽しんでいる部分を知るためです。Firebase は広告 ID を収集せず、これらの統計を広告に使うことはありません。<strong>法的根拠：</strong>あなたの同意（GDPR 第6条1項(a)）。</p>
 
